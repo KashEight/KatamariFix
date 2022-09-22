@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KatamariFix", "KatamariFix\KatamariFix.csproj", "{085181D5-FB82-4885-A3D8-855E050F59A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{085181D5-FB82-4885-A3D8-855E050F59A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{085181D5-FB82-4885-A3D8-855E050F59A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{085181D5-FB82-4885-A3D8-855E050F59A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{085181D5-FB82-4885-A3D8-855E050F59A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {839B6AA3-095F-4DB2-8939-00180B4D13FB}
+	EndGlobalSection
+EndGlobal
