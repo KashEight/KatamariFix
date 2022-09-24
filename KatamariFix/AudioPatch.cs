@@ -9,12 +9,12 @@ namespace KatamariFix
         [HarmonyPostfix]
         static void SetGameVolumeSilent(SoundController __instance)
         {
-            Plugin.Log.LogMessage("Patching SoundController::Setup(); Set volume to 1/8");
+            Main.Log.LogMessage("Patching SoundController::Setup(); Set volume to 1/8");
             foreach (SoundController.eAudioMixerGroup eAudioMixer in Enum.GetValues(typeof(SoundController.eAudioMixerGroup)))
             {
                 if (!eAudioMixer.Equals(SoundController.eAudioMixerGroup.MAX))
                 {
-                    Plugin.Log.LogMessage("eAudioMixer: " + eAudioMixer.ToString());
+                    Main.Log.LogMessage("eAudioMixer: " + eAudioMixer.ToString());
                     __instance.SetVolume(eAudioMixer, 0.125f);
                 }
             }
@@ -24,7 +24,7 @@ namespace KatamariFix
         [HarmonyPrefix]
         static void SetMovieVolumeSilent(ref float volume)
         {
-            Plugin.Log.LogMessage("Patching UIMoviePlayer::PlayMove(); Set volume to 1/8");
+            Main.Log.LogMessage("Patching UIMoviePlayer::PlayMove(); Set volume to 1/8");
             volume = 0.125f;
         }
     }
