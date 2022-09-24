@@ -12,6 +12,9 @@
 2. [リリースページ](https://github.com/KashEight/KatamariFix/releases) からこのプラグインをダウンロードする。
 3. `KatamariFix.dll` を `BepInEx/plugins` フォルダーに展開する。
 
+**注意**: このプラグインは BepInEx 6 が必要です！
+また、依存関係のライブラリのバグのため、修正済みの [MonoMod.Common](https://github.com/BepInEx/BepInEx/files/9275584/MMTestFix.zip) をダウンロードして、`BepInEx/core` に展開する作業が必要です！ (ref: https://github.com/BepInEx/BepInEx/issues/458)
+
 ## 修正したバグ
 
 - オーディオバグ

@@ -12,6 +12,9 @@ This project is currently working in process.
 2. Download this plugin from [releases page](https://github.com/KashEight/KatamariFix/releases).
 3. Extract `KatamariFix.dll` to `BepInEx/plugins` folder.
 
+**NOTE**: This plugin needs BepInEx 6!
+And, due to the bug of the depedency, you need to download fixed [MonoMod.Common](https://github.com/BepInEx/BepInEx/files/9275584/MMTestFix.zip) and extract it to `BepInEx/core`. (ref: https://github.com/BepInEx/BepInEx/issues/458)
+
 ## Fixed Bugs
 
 - Audio Bugs
