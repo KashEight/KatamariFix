@@ -8,7 +8,7 @@ namespace KatamariFix
     {
         /// <summary>
         /// Dictionary for "NameID".
-        /// Used for whether "NameID" is attached or not. 
+        /// Used for whether "NameID" is attached or not.
         /// (key: "NameID", value: count)
         /// </summary>
         private static Dictionary<int, int> dic;
@@ -99,7 +99,7 @@ namespace KatamariFix
         /// <summary>
         /// Default `OnPageChanged`method on `NameSelector` class.
         /// Display NAMES recorded on a field `u8SwNameMonoCatch` on `SI_GAME` class.
-        /// Because return value is always false, original method is skipped. 
+        /// Because return value is always false, original method is skipped.
         /// </summary>
         /// <param name="__instance">instance of NameSelector</param>
         /// <param name="nowPage">original argument.</param>

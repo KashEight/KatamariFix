@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net35</TargetFramework>
-	<AssemblyName>KatamariFixDebug</AssemblyName>
-	<Description>Debug tools for KatamariFix (not for release)</Description>
-	<Version>1.0.0.0</Version>
-	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-	<LangVersion>latest</LangVersion>
+    <AssemblyName>KatamariFixDebug</AssemblyName>
+    <Description>Debug tools for KatamariFix (not for release)</Description>
+    <Version>1.0.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
