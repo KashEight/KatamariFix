@@ -15,54 +15,62 @@ namespace KatamariFix
         /// <summary>
         /// To emulate the original field `mIsAttachedToKatamariOld` on `AttachableProp` class.
         /// </summary>
-        private static Dictionary<AttachableProp, bool> emulateMIsAttachedToKatamariOld;
+        private static Dictionary<AttachableProp, bool> emulateMIsAttachedToKatamariOld = new Dictionary<AttachableProp, bool>();
 
         /// <summary>
-        /// Init `NamePatch.dic` like the game.
+        /// Initialize `NamePatch.dic` like the game.
         /// </summary>
         [HarmonyPatch(typeof(GlobalManager), "gYm_GameInit")]
         [HarmonyPostfix]
         static void InitNameDic()
         {
             dic = new Dictionary<int, int>();
-            emulateMIsAttachedToKatamariOld = new Dictionary<AttachableProp, bool>();
+        }
+
+        /// <summary>
+        /// Add self instance and set to false to `NamePatch.emulateMIsAttachedToKatamariOld`.
+        /// </summary>
+        /// <param name="__instance">instance of AttachableProp.</param>
+        [HarmonyPatch(typeof(AttachableProp), "Awake")]
+        [HarmonyPostfix]
+        static void AddInstanceDic(AttachableProp __instance)
+        {
+            emulateMIsAttachedToKatamariOld.Add(__instance, false);
         }
 
         /// <summary>
         /// Default `UpdateMono` method on `AttachableProp` class.
         /// Increment or decrement value of key (u8MonoIdNameNo) in the dictionary.
         /// </summary>
-        /// <param name="__instance">instance of AttachableProp</param>
+        /// <param name="__instance">instance of AttachableProp.</param>
         /// <param name="___gWork">private field of class (GlobalWork).</param>
         [HarmonyPatch(typeof(AttachableProp), "UpdateMono")]
         [HarmonyPostfix]
         static void AddNameToDic(AttachableProp __instance, GlobalWork ___gWork)
         {
             bool isAttached = __instance.mIsAttachedToKatamari;
-            if (!emulateMIsAttachedToKatamariOld.ContainsKey(__instance))
-            {
-                emulateMIsAttachedToKatamariOld.Add(__instance, false);
-            }
             if (emulateMIsAttachedToKatamariOld[__instance] != isAttached)
             {
-                if (__instance.mIsAttachedToKatamari)
+                int key = __instance.u8MonoIdNameNo;
+                if (key != 0)
                 {
-                    if (___gWork.u8GameInfoMode == GAMEINFO_MODE.GAMEINFO_MODE_1P)
+                    if (__instance.mIsAttachedToKatamari)
                     {
-                        int key = __instance.u8MonoIdNameNo;
-                        if (!dic.ContainsKey(key))
+                        if (___gWork.u8GameInfoMode == GAMEINFO_MODE.GAMEINFO_MODE_1P)
                         {
-                            dic.Add(key, 0);
+                            if (!dic.ContainsKey(key))
+                            {
+                                dic.Add(key, 0);
+                            }
+                            dic[key] += 1;
                         }
-                        dic[key] += 1;
                     }
-                }
-                else
-                {
-                    int key = __instance.u8MonoIdNameNo;
-                    if (dic.ContainsKey(key) && dic[key] > 0)
+                    else
                     {
-                        dic[key] -= 1;
+                        if (dic.ContainsKey(key) && dic[key] > 0)
+                        {
+                            dic[key] -= 1;
+                        }
                     }
                 }
                 emulateMIsAttachedToKatamariOld[__instance] = isAttached;
