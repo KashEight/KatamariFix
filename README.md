@@ -19,11 +19,12 @@ And, due to the bug of the depedency, you need to download fixed [MonoMod.Common
 
 - Audio Bugs
   - Default BGM/SE of game (including game movies) is too loud
+- Collection Bugs
+  - Record "NAMES" not collected
 
 ## Planned
 
-- Collection Bugs
-  - Record "NAMES" not collected
+None
 
 ## Plugin Bugs / New Bugs
 
