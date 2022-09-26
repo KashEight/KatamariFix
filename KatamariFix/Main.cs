@@ -8,6 +8,7 @@ namespace KatamariFix
     public class Main : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
+
         private void Awake()
         {
             Log = Logger;
