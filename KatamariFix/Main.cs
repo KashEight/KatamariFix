@@ -4,7 +4,7 @@ using HarmonyLib;
 
 namespace KatamariFix
 {
-    [BepInPlugin("net.hytus.kamatarifix", "KatamariFix", "1.1.0.0")]
+    [BepInPlugin("net.hytus.katamarifix", "KatamariFix", "1.1.0.0")]
     public class Main : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
@@ -12,7 +12,7 @@ namespace KatamariFix
         private void Awake()
         {
             Log = Logger;
-            var harmony = new Harmony("net.hytus.harmony.kamatarifix");
+            var harmony = new Harmony("net.hytus.harmony.katamarifix");
             harmony.PatchAll(typeof(AudioPatch));
             harmony.PatchAll(typeof(NamePatch));
         }
