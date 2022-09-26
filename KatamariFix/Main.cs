@@ -4,7 +4,7 @@ using HarmonyLib;
 
 namespace KatamariFix
 {
-    [BepInPlugin("net.hytus.katamarifix", "KatamariFix", "1.1.0.0")]
+    [BepInPlugin("net.hytus.katamarifix", "KatamariFix", "1.1.0.1")]
     public class Main : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
