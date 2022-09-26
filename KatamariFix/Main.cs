@@ -13,6 +13,7 @@ namespace KatamariFix
             Log = Logger;
             var harmony = new Harmony("net.hytus.harmony.kamatarifix");
             harmony.PatchAll(typeof(AudioPatch));
+            harmony.PatchAll(typeof(NamePatch));
         }
     }
 }
